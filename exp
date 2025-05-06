@@ -28,3 +28,24 @@ disp('Return Loss (dB):');
 disp(return_loss_db);
 disp('Excess Loss (dB):');
 disp(exess_loss_db); 
+
+
+
+clc;
+clear all;
+close all;
+input_power=1*10e-3;
+p_out=14*10e-6;
+N=32;
+Splitting_loss=10*log10(N);
+excess_loss= 10*log10(input_power/(N*p_out));
+total_loss=Splitting_loss+excess_loss;
+Insertion_loss= 10*log10(input_power/p_out);
+disp('Splitting_loss')
+disp(Splitting_loss)
+disp('excess_loss')
+disp(excess_loss)
+disp('total_loss')
+disp(total_loss)
+disp('Insertion_loss')
+disp(Insertion_loss)

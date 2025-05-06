@@ -1,0 +1,30 @@
+clc;
+clear all;
+close all;
+
+p1 = 200e-6;     % Input power
+p2 = 90e-6;      % Through port power
+p3 = 85e-6;      % Coupled port power
+p4 = 6.95e-9;    % Isolated port power (reflected)
+
+% Coupling (relative to input)
+coupled_power_dB = 10 * log10(p1 / p3);
+
+% Insertion Loss
+insertion_loss_db = 10 * log10(p1 / p2);
+
+% Return Loss
+return_loss_db = -10 * log10(p4 / p1);   % Preferred definition
+
+% Excess Loss
+exess_loss_db = 10 * log10(p1 / (p2 + p3));
+
+% Display results
+disp('Coupled Power (dB):');
+disp(coupled_power_dB);
+disp('Insertion Loss (dB):');
+disp(insertion_loss_db);
+disp('Return Loss (dB):');
+disp(return_loss_db);
+disp('Excess Loss (dB):');
+disp(exess_loss_db); 
